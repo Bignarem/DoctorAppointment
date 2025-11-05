@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "931931146259",
+    "project_id": "doctorappointment-7ec15",
+    "storage_bucket": "doctorappointment-7ec15.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931931146259:android:45b3eafc4b0bcede74d7e6",
+        "android_client_info": {
+          "package_name": "net.nesweb.doctorappointment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQO7gXPA6xyiO92EL8k_NQFpMdFz8Y8qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
