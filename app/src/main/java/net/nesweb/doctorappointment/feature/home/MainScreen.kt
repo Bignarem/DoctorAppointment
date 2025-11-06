@@ -27,6 +27,7 @@ fun MainScreen() {
             item { HomeHeader() }
             item { Banner() }
             item { SectionHeader(title = "Doctor Speciality", onSeeAll = null) }
+
         }
     }
 }

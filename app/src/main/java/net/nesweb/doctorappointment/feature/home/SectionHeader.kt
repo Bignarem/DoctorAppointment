@@ -40,6 +40,11 @@ fun SectionHeader(
                     color = colorResource(R.color.darkPurple)
                 )
             }
+        } else{
+            Text(
+                text = "See all",
+                color = colorResource(R.color.darkPurple)
+            )
         }
     }
 }
