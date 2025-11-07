@@ -3,15 +3,28 @@ package net.nesweb.doctorappointment.feature.home
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import net.nesweb.doctorappointment.core.ViewModel.MainViewModel
 
 @Composable
-fun MainScreen() {
+fun MainScreen(
+    viewModel: MainViewModel
+
+) {
+    val categories by viewModel.category.observeAsState(initial = emptyList())
+
+    LaunchedEffect(Unit) {
+        if (categories.isEmpty()) viewModel.loadCategory()
+    }
+
     var selectedBottom by remember { mutableStateOf(0) }
 
     Scaffold(
@@ -27,6 +40,7 @@ fun MainScreen() {
             item { HomeHeader() }
             item { Banner() }
             item { SectionHeader(title = "Doctor Speciality", onSeeAll = null) }
+            item { CategoryRow(items = categories) }
 
         }
     }
@@ -35,5 +49,6 @@ fun MainScreen() {
 @Preview
 @Composable
 fun MainScreenPreview() {
-    MainScreen()
+    val viewModel: MainViewModel = viewModel()
+    MainScreen(viewModel = viewModel)
 }
