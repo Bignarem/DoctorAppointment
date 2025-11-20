@@ -41,7 +41,6 @@ fun MainScreen(
             item { Banner() }
             item { SectionHeader(title = "Doctor Speciality", onSeeAll = null) }
             item { CategoryRow(items = categories) }
-
         }
     }
 }
