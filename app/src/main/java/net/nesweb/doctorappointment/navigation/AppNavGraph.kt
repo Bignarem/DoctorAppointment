@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import net.nesweb.doctorappointment.core.ViewModel.MainViewModel
+import net.nesweb.doctorappointment.navigation.routes.homeRoute
 import net.nesweb.doctorappointment.navigation.routes.introRoute
 
 
@@ -20,5 +21,7 @@ fun AppNavGraph(
                 }
             }
         )
+
+        homeRoute(vm = vm)
     }
 }
